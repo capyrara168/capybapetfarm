@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capyba Pet Farm | 卡皮巴拉宠物农场</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; height: 80px;">
+    
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="assets/capyba_pet_farm_logo.png" alt="Logo" style="height: 50px; width: auto;">
+        <div style="font-weight: bold; font-size: 1.3rem; color: var(--dark-coffee); line-height: 1.2;" data-key="site-title">
+            Capyba Pet Farm
+        </div>
+    </div>
+    
+    <nav style="display: flex; align-items: center; gap: 25px;">
+        <div class="nav-links-wrapper" style="display: flex; gap: 20px;">
+            <a href="#about" class="nav-link" data-key="nav-about">About</a>
+            <a href="#animal-wall" class="nav-link" data-key="nav-animals">动物朋友</a>
+            <a href="#services" class="nav-link" data-key="nav-services">Services</a>
+            <a href="#contact" class="nav-link" data-key="nav-contact">Contact</a>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn" data-key="nav-lang">语言 ▾</button>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="changeLang('zh')">中文 (ZH)</a>
+                <a href="javascript:void(0)" onclick="changeLang('en')">English (EN)</a>
+                <a href="javascript:void(0)" onclick="changeLang('ms')">Melayu (BM)</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="hero">
+    <div>
+        <h1 data-key="hero-title">Welcome to Capyba Pet Farm</h1>
+        <p data-key="hero-subtitle">The cutest capybara and alpaca interactive experience park in Malaysia</p>
+    </div>
+</div>
+
+<section id="about">
+    <h2 data-key="about-title">About Us</h2>
+    <div class="rounded-card">
+        <p data-key="about-halal">No Pork, No Lard | Halal-friendly environment</p>
+        
+        <div class="cert-container">
+            <div class="cert-card">
+                <img src="assets/sijil halal.jpg" alt="Halal Cert 1" onclick="openMenu(this.src)" style="cursor: pointer;">
+                <p>Halal Certified</p>
+            </div>
+            <div class="cert-card">
+                <img src="assets/sijil halal2.jpg" alt="Halal Cert 2" onclick="openMenu(this.src)" style="cursor: pointer;">
+                <p>No Pork No Lard</p>
+            </div>
+            <div class="cert-card">
+                <img src="assets/halal_quality_control.jpg" alt="Quality Control" onclick="openMenu(this.src)" style="cursor: pointer;">
+                <p>Quality Assurance</p>
+            </div>
+        </div>
+        
+        <p data-key="about-description">Provide professional animal knowledge education and high-quality interactive experience</p>
+    </div>
+</section>
+
+<div id="imageOverlay" class="overlay" onclick="closeMenu()">
+    <img src="" id="overlayImg" class="full-cert">
+</div>
+
+<section id="animal-wall">
+    <h2 data-key="animal-wall-title">Say hi to our friend!</h2>
+    <div class="animal-grid">
+        <div class="animal-avatar">
+            <img src="assets/capybara.png" alt="Capybara">
+            <p data-key="animal-capy">Capybara</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/core_duck.png" alt="Call Duck">
+            <p data-key="animal-duck">Call Duck</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/lama_alphaca.png" alt="Alpaca">
+            <p data-key="animal-alpaca">Alpaca</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/black_nose_sheep.png" alt="Sheep">
+            <p data-key="animal-sheep">Sheep</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/meer_cat.png" alt="Meerkat">
+            <p data-key="animal-meerkat">Meerkat</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/fox.png" alt="Fox">
+            <p data-key="animal-fox">Fox</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/rabbit.png" alt="Rabbit">
+            <p data-key="animal-rabbit">Rabbit</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/parrie_dog.png" alt="Prairie Dog">
+            <p data-key="animal-prairie">Prairie Dog</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/beard_dragon.png" alt="Bearded Dragon">
+            <p data-key="animal-dragon">Bearded Dragon</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/racoon.png" alt="Raccoon">
+            <p data-key="animal-racoon">Raccoon</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/mini_horse.png" alt="Mini Horse">
+            <p data-key="animal-horse">Mini Horse</p>
+        </div>
+        <div class="animal-avatar">
+            <img src="assets/mini_goat.png" alt="Mini Goat">
+            <p data-key="animal-goat">Mini Goat</p>
+        </div>
+    </div>
+</section>
+
+<!-- Later we will continue to add catering, retail and other sections -->
+
+<section id="services">
+    <h2 data-key="services-title">Our Services</h2>
+    <div class="grid-container" style="display: flex; flex-direction: column; gap: 40px; padding: 0 5%;">
+        
+        <div class="service-horizontal-card">
+            <div class="service-img-box" style="background-color: #FFF9E6; cursor: pointer;" onclick="openMenu('assets/menu.jpg')">
+                <img src="assets/menu.jpg" alt="Menu">
+            </div>
+            <div class="service-info-box">
+                <h3 data-key="dining-title">🍽️ Dining</h3>
+                <p data-key="dining-description">Pasta, French Pastries & Refreshments</p>
+                <button onclick="openMenu('assets/menu.jpg')" class="paw-button">
+                    🐾 <span data-key="view-menu">View Menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="service-horizontal-card" style="flex-direction: row-reverse;">
+            <div class="service-img-box">
+                <img src="assets/interactive.png" alt="Interaction">
+            </div>
+            <div class="service-info-box">
+                <h3 data-key="interaction-title">🐾 Interaction</h3>
+                <p data-key="interaction-description">Meet & Feed Alpacas & Capybaras</p>
+            </div>
+        </div>
+
+        <div class="service-horizontal-card">
+            <div class="service-img-box">
+                <img src="assets/retail.png" alt="Retail">
+            </div>
+            <div class="service-info-box">
+                <h3 data-key="retail-title">🛒 Retail</h3>
+                <p data-key="retail-description">Pet supplies, Hermit crabs & Original Merch</p>
+                <p style="color: var(--orange); font-weight: bold; margin-top: 10px;" data-key="coming-soon">✨ Coming Soon!</p>
+            </div>
+        </div>
+
+        <div class="service-horizontal-card" style="flex-direction: row-reverse;">
+            <div class="service-img-box">
+                <img src="assets/event_rental.png" alt="Events">
+            </div>
+            <div class="service-info-box">
+                <h3 data-key="events-title">🎉 Events & Rental</h3>
+                <p data-key="events-description">Host your party or invite animals to your place!</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="imageOverlay" class="overlay" onclick="closeMenu()">
+    <span class="close-btn">&times;</span>
+    <img id="overlayImg" src="" alt="Full View">
+</div>
+
+<!-- contact us section -->
+<footer id="contact">
+    <h2 data-key="contact-title">联系我们</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px;">
+        
+        <div class="rounded-card" style="color: var(--dark-coffee);"> <h3 style="color: var(--orange);" data-key="cafe-name">Capyba Cafe</h3>
+            <p>28, Jalan Nakhoda 2, Taman Ungku Tun Aminah, 81300 Skudai, Johor</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.423166318933!2d103.6521945!3d1.5147551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da71649987f17b%3A0xc3c907b81f21509b!2s28%2C%20Jalan%20Nakhoda%202%2C%20Taman%20Ungku%20Tun%20Aminah%2C%2081300%20Skudai%2C%20Johor!5e0!3m2!1sen!2smy!4v1712000000000" 
+                width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="rounded-card" style="display: flex; flex-direction: column; justify-content: center; border: 2px dashed var(--orange); color: var(--dark-coffee);">
+            <h3 style="color: var(--orange);" data-key="zoo-name">Capyba Farm (Zoo)</h3>
+            <div style="font-size: 1.5rem; font-weight: bold; padding: 40px 0;" data-key="coming-soon">COMING SOON</div>
+            <p data-key="stay-tuned">敬请期待开业！</p>
+        </div>
+
+        <div class="rounded-card" style="color: var(--dark-coffee);">
+            <h3 data-key="social-title">社交媒体</h3>
+            <img src="assets/instagram_qr.png" alt="Instagram QR" style="width: 150px; margin-bottom: 10px; border-radius: 10px;">
+            <p><a href="https://www.instagram.com/capybababa" target="_blank">Follow @capybababa</a></p>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/601126698262" target="_blank" class="whatsapp-btn">💬 WhatsApp Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Capyba Pet Farm. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

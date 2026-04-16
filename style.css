@@ -1,0 +1,554 @@
+/* 1. Color Variables Definition (Warm White, Orange, Dark Coffee) */
+:root {
+    --cream: #FFFDF5; /* Warm white - like cat belly */
+    --orange: #FF9F43; /* Vibrant orange - like orange cat fur */
+    --dark-coffee: #3E2723; /* Dark coffee - like black cat fur */
+}
+
+/* 2. Global Base Styles */
+body {
+    font-family: 'Quicksand', 'Segoe UI', sans-serif; /* Using rounder font */
+    background-color: var(--cream) !important; /* Force background color */
+    color: var(--dark-coffee);
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1.1rem; /* Increase base font size */
+}
+
+/* 3. Header Navigation Bar: White background, Dark coffee text */
+header {
+    background: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 10px rgba(62, 39, 35, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header nav a {
+    transition: 0.3s;
+    margin: 0 10px;
+    color: var(--dark-coffee);
+    font-size: 1.1rem; /* Increase navigation font */
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: var(--orange) !important;
+}
+
+/* 4. Hero Section: Warm and welcoming with rounded corners */
+.hero {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Gradient color creates warm feeling */
+    background: linear-gradient(135deg, #FF9F43 0%, #FFB367 100%);
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    margin-bottom: 20px;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+.hero p { font-size: 1.5rem; }
+
+/* 5. Common Sections: H2 with orange underline */
+section { padding: 60px 10%; text-align: center; }
+
+h2 {
+    color: var(--orange);
+    border-bottom: 4px solid var(--orange);
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 40px;
+    border-radius: 2px;
+    font-size: 2.2rem; /* Increase h2 font size */
+}
+
+h3 {
+    font-size: 1.5rem; /* Increase h3 font size */
+}
+
+/* 6. Rounded Cards: Pure white background with soft shadows */
+.rounded-card {
+    background: white !important;
+    border-radius: 30px; /* Rounder corners, more family-friendly */
+    padding: 30px;
+    margin: 15px auto;
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.08);
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 159, 67, 0.1);
+}
+
+.rounded-card p {
+    font-size: 1.15rem; /* Increase card paragraph font size */
+}
+
+.rounded-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 159, 67, 0.15);
+}
+
+/* 7. Language Toggle Button: Orange rounded button */
+nav button {
+    background: white;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 8px 18px;
+    font-size: 1rem; /* Increase button font size */
+    margin: 0 3px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: var(--orange);
+    color: white;
+}
+
+/* 8. WhatsApp Button: Bright green */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white !important;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* 9. Animal Avatar Decoration */
+.rounded-card img {
+    border: 4px solid var(--cream);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Update Footer Styles */
+footer {
+    background-color: var(--dark-coffee); /* Dark coffee color as cat's black spots */
+    color: var(--cream); /* Using warm white text */
+    padding: 40px 10% 15px;
+    text-align: center;
+    border-top-left-radius: 60px; /* Add rounded corners to look like a curled up cat's silhouette */
+    border-top-right-radius: 60px;
+}
+
+footer h2 {
+    color: var(--orange); /* Title still uses orange */
+    border-bottom: 3px solid var(--orange);
+}
+
+footer a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 253, 245, 0.1);
+    font-size: 1rem; /* Increase footer text size */
+    opacity: 0.8;
+}
+
+footer p {
+    font-size: 1.15rem; /* Increase footer paragraph font size */
+}
+
+/* Adjust to large square animal wall */
+.animal-grid {
+    display: grid;
+    /* Increase minimum width for larger images on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 40px;
+    padding: 20px 5%;
+    justify-items: center;
+}
+
+.animal-avatar {
+    width: 100%; /* Adapt to grid width */
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.animal-avatar img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Strict square */
+    object-fit: cover;
+    border-radius: 20px; /* Changed to large rounded rectangle, more warm and friendly than pure right angles */
+    border: 8px solid white;
+    outline: 4px solid var(--orange);
+    box-shadow: 0 12px 25px rgba(62, 39, 35, 0.15); /* Enhance shadow depth */
+}
+
+.animal-avatar p {
+    margin-top: 18px;
+    font-size: 1.3rem; /* Enlarged font for easier reading by seniors */
+    font-weight: bold;
+    color: var(--dark-coffee);
+    background-color: white;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.clickable-img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+.zoom-hint { font-size: 1rem; color: var(--orange); margin-top: 5px; font-weight: 500; }
+
+/* Overlay styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+.full-menu { max-width: 90%; max-height: 90%; border-radius: 10px; }
+.full-cert { max-width: 85%; max-height: 85%; border-radius: 10px; }
+
+/* Certification card container */
+.cert-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.cert-card {
+    text-align: center;
+    flex: 0 1 280px;
+}
+
+.cert-card img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(62, 39, 35, 0.15);
+    transition: 0.3s ease;
+    border: 3px solid var(--orange);
+}
+
+.cert-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(62, 39, 35, 0.25);
+}
+
+.cert-card p {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: var(--dark-coffee);
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-coffee);
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--orange);
+}
+
+/* --- Dropdown Menu Container --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styles */
+.dropbtn {
+    background-color: white;
+    color: var(--orange);
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: 2px solid var(--orange);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Dropdown content (default hidden) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1001;
+    border-radius: 12px;
+    overflow: hidden;
+    right: 0; /* Align to the right */
+}
+
+/* Links inside dropdown menu */
+.dropdown-content a {
+    color: var(--dark-coffee);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+/* Hover effect */
+.dropdown-content a:hover {
+    background-color: var(--cream);
+    color: var(--orange);
+}
+
+/* Display dropdown menu */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--orange);
+    color: white;
+}
+/* Ensure header is always fixed at top with opaque background */
+header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Fine-tune navigation link styles */
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-coffee);
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Fine-tune dropdown position, ensure right alignment */
+.dropdown-content {
+    right: 0;
+    top: 100%;
+}
+
+/* Responsive: Hide some text or adjust spacing if screen is too small */
+@media (max-width: 768px) {
+    .nav-links-wrapper {
+        display: none !important; /* For mobile, it's recommended to hide text navigation or use hamburger menu */
+    }
+    header {
+        height: auto;
+        padding: 10px;
+    }
+}
+
+/* Service section container changed to single column flow layout for neat mobile display */
+#services .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 5%;
+}
+
+/* Horizontal service card styles */
+.service-horizontal-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(62, 39, 35, 0.08);
+    transition: 0.3s ease;
+    text-align: left; /* Changed to left alignment for more professional look */
+}
+
+.service-horizontal-card:hover {
+    transform: scale(1.02);
+}
+
+/* Image area */
+.service-img-box {
+    flex: 1;
+    max-width: 400px; /* Control image width */
+    line-height: 0;
+}
+
+.service-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text content area */
+.service-info-box {
+    flex: 1.5;
+    padding: 40px;
+}
+
+/* Mobile adaptation: Change back to vertical stacking */
+@media (max-width: 900px) {
+    .service-horizontal-card {
+        flex-direction: column;
+    }
+    .service-img-box {
+        max-width: 100%;
+    }
+}
+/* Cat paw button special style */
+.paw-button {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(255, 159, 67, 0.3);
+}
+
+.paw-button:hover {
+    transform: scale(1.05);
+    background-color: #e67e22;
+}
+
+/* Enlarged overlay */
+.overlay {
+    display: none; /* Default hidden */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999; /* Must be top layer */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+#overlayImg {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px; right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Mobile-specific Optimization (screen width less than 768px) */
+@media (max-width: 768px) {
+    .animal-grid {
+        display: flex; /* Changed to flexible layout */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Add snap scrolling effect */
+        gap: 15px;
+        padding: 10px 20px;
+        justify-content: flex-start; /* Align to left */
+    }
+
+    .animal-avatar {
+        flex: 0 0 160px; /* Fixed width of 160px per card, no longer stretches full width */
+        scroll-snap-align: center;
+    }
+
+    .animal-avatar img {
+        width: 150px; /* Reduce image size */
+        height: 150px;
+        border-width: 4px; /* Reduce border width */
+    }
+
+    .animal-avatar p {
+        font-size: 1rem; /* Reduce font size */
+        padding: 3px 10px;
+    }
+
+    /* Hide scrollbar for better appearance */
+    .animal-grid::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 5% 15px; /* Reduce top and bottom margins */
+        border-top-left-radius: 40px; /* Reduce corner radius for small screens */
+        border-top-right-radius: 40px;
+    }
+
+    footer h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    /* Compact Footer Grid */
+    footer > div {
+        gap: 15px !important;
+    }
+
+    footer .rounded-card {
+        padding: 15px; /* Reduce card padding */
+        margin: 5px 0;
+    }
+
+    footer iframe {
+        height: 180px; /* Reduce map height */
+    }
+
+    footer img[alt="Instagram QR"] {
+        width: 100px; /* Reduce QR code size */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 10px 15px;
+        flex-wrap: wrap; /* Allow text wrapping */
+    }
+
+    header div[data-key="site-title"] {
+        font-size: 1.1rem; /* Further reduce store name size */
+    }
+
+    header img {
+        height: 35px; /* Reduce logo size */
+    }
+
+    /* Mobile: Hide or reduce text navigation size */
+    .nav-links-wrapper {
+        gap: 10px !important;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
